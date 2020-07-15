@@ -50,6 +50,7 @@ flutter:
     - assets/images/header.png
     - assets/images/asl_screens.png
     - assets/images/hands-with-phones.png
+    - assets/images/helping-others.png
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
