@@ -14,14 +14,15 @@ class LandingPage extends StatelessWidget {
           // widthFactor: 900,
           child: SingleChildScrollView(
             child: Container(
-              // width: 1020,
               child: Column(
                 children: [
                   Container(
-                    color: Colors.amber,
                     height: 600,
                     width: double.infinity,
-                    // width: MediaQuery.of(context).size.width * 1,
+                    child: Image.asset(
+                      'images/header.png',
+                      fit: BoxFit.fill,
+                    ),
                   ),
                   Container(
                     width: 1020,
@@ -30,8 +31,8 @@ class LandingPage extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 10),
                           padding: EdgeInsets.all(10),
-                          color: Colors.green[300],
-                          height: 400,
+                          // color: Colors.green[300],
+                          height: 300,
                           width: double.infinity,
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,27 +41,37 @@ class LandingPage extends StatelessWidget {
                                 flex: 2,
                                 child: Column(
                                   children: [
-                                    Text('Simple steps to get started'),
+                                    Text(
+                                      'Simple steps to get started',
+                                      style: TextStyle(fontSize: 22),
+                                    ),
                                   ],
                                 ),
                               ),
                               Expanded(
-                                  flex: 2,
-                                  child: Center(child: Text('Insert Image'))),
+                                flex: 2,
+                                child: Image.asset(
+                                  'images/asl_screens.png',
+                                  // fit: BoxFit.fill,
+                                ),
+                              ),
                             ],
                           ),
                         ),
                         Container(
                           padding: EdgeInsets.all(10),
-                          color: Colors.red[300],
-                          height: 500,
+                          // color: Colors.red[300],
+                          // height: 500,
                           width: double.infinity,
                           child: Row(
                             // crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Expanded(
-                                flex: 4,
-                                child: Center(child: Text('Insert Image')),
+                                flex: 5,
+                                child: Image.asset(
+                                  'images/hands-with-phones.png',
+                                  // fit: BoxFit.fill,
+                                ),
                               ),
                               Expanded(
                                 flex: 1,
@@ -69,10 +80,11 @@ class LandingPage extends StatelessWidget {
                                     ),
                               ),
                               Expanded(
-                                flex: 2,
+                                flex: 4,
                                 child: Text(
-                                  'Now more simple, secure, and faster than ever - with geolocation built-in. Now more simple, secure, and faster than ever - with geolocation built-in',
+                                  'Now more simple, secure, and faster than ever - with geolocation built-in.',
                                   textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 22),
                                 ),
                               ),
                               Expanded(
