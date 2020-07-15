@@ -100,7 +100,7 @@ class LandingPage extends StatelessWidget {
                           padding: EdgeInsets.all(10),
                           margin: EdgeInsets.symmetric(vertical: 10),
                           height: 300,
-                          color: Colors.blue,
+                          // color: Colors.blue,
                           width: double.infinity,
                           child: Row(
                             // crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,23 +109,35 @@ class LandingPage extends StatelessWidget {
                                 flex: 2,
                                 child: Center(
                                   child: Text(
-                                      'Millions of giving opportunity. No credit card needed. '),
+                                    'Millions of giving opportunity. No credit card needed.',
+                                    style: TextStyle(fontSize: 22),
+                                  ),
                                 ),
                               ),
                               Expanded(
                                 flex: 2,
-                                child: Center(child: Text('Insert Image')),
+                                child: Image.asset(
+                                  'images/helping-others.png',
+                                  // fit: BoxFit.fill,
+                                ),
                               ),
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: 10,
+                        ),
                         FlatButton(
-                          padding: EdgeInsets.all(30),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 80, vertical: 30),
                           onPressed: () {},
                           child: Text('Get AskGiveLocally Free'),
                           color: Theme.of(context).accentColor,
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(20.0)),
+                        ),
+                        SizedBox(
+                          height: 30,
                         ),
                         Row(
                           children: [
