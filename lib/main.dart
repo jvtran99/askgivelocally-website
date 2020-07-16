@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'A1sk Give Locally Landing Page',
+      title: 'A12sk Give Locally Landing Page',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
         accentColor: Colors.amber,
