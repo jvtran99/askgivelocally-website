@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../sections/simplesteps.dart';
+import '../sections/geolocation.dart';
+import '../widget/flatbutton.dart';
+import '../widget/icon_text.dart';
+
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AskGiveLocally 1'),
+        title: Text('Ask. Give. Locally'),
+        actions: [
+          Icon(Icons.file_download),
+        ],
       ),
       body: Container(
         // color: Theme.of(context).primaryColor,
@@ -25,76 +33,21 @@ class LandingPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: 1020,
+                    width: 1080,
                     child: Column(
                       children: [
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 10),
                           padding: EdgeInsets.all(10),
-                          // color: Colors.green[300],
-                          height: 300,
+                          height: 400,
                           width: double.infinity,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                flex: 2,
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      'Simple steps to get started',
-                                      style: TextStyle(fontSize: 22),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Expanded(
-                                flex: 2,
-                                child: Image.asset(
-                                  'images/asl_screens.png',
-                                  // fit: BoxFit.fill,
-                                ),
-                              ),
-                            ],
-                          ),
+                          child: buildSimpleSteps(context),
                         ),
                         Container(
-                          padding: EdgeInsets.all(10),
-                          // color: Colors.red[300],
-                          // height: 500,
+                          // color: Colors.green,
+                          // padding: EdgeInsets.all(10),
                           width: double.infinity,
-                          child: Row(
-                            // crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                flex: 5,
-                                child: Image.asset(
-                                  'images/hands-with-phones.png',
-                                  // fit: BoxFit.fill,
-                                ),
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: Container(
-                                    // color: Colors.pink,
-                                    ),
-                              ),
-                              Expanded(
-                                flex: 4,
-                                child: Text(
-                                  'Now more simple, secure, and faster than ever - with geolocation built-in.',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 22),
-                                ),
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: Container(
-                                    // color: Colors.blue,
-                                    ),
-                              ),
-                            ],
-                          ),
+                          child: buildGeolocationSection(context),
                         ),
                         Container(
                           padding: EdgeInsets.all(10),
@@ -106,7 +59,11 @@ class LandingPage extends StatelessWidget {
                             // crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Expanded(
-                                flex: 2,
+                                child: Container(),
+                                flex: 1,
+                              ),
+                              Expanded(
+                                flex: 8,
                                 child: Center(
                                   child: Text(
                                     'Millions of giving opportunity. No credit card needed.',
@@ -115,7 +72,7 @@ class LandingPage extends StatelessWidget {
                                 ),
                               ),
                               Expanded(
-                                flex: 2,
+                                flex: 8,
                                 child: Image.asset(
                                   'images/helping-others.png',
                                   // fit: BoxFit.fill,
@@ -125,19 +82,11 @@ class LandingPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: 10,
-                        ),
-                        FlatButton(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 80, vertical: 30),
-                          onPressed: () {},
-                          child: Text('Get AskGiveLocally Free'),
-                          color: Theme.of(context).accentColor,
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(20.0)),
-                        ),
-                        SizedBox(
                           height: 30,
+                        ),
+                        buildAskButton(context, 'Get AskGiveLocally Free'),
+                        SizedBox(
+                          height: 70,
                         ),
                         Row(
                           children: [
@@ -148,120 +97,49 @@ class LandingPage extends StatelessWidget {
                               ),
                             ),
                             Expanded(
-                              flex: 5,
+                              flex: 7,
                               child: Container(
                                 margin: EdgeInsets.only(top: 10),
                                 padding: EdgeInsets.symmetric(
                                   vertical: 18,
                                   horizontal: 30,
                                 ),
-                                // decoration: BoxDecoration(color: Colors.white),
                                 child: Align(
-                                  // widthFactor: 4,
                                   alignment: AlignmentDirectional.topCenter,
                                   child: Wrap(
-                                    spacing: 95,
+                                    spacing: 100,
                                     runSpacing: 60,
                                     children: <Widget>[
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
-                                      Column(
-                                        children: [
-                                          Icon(
-                                            Icons.face,
-                                            size: 60,
-                                          ),
-                                          Text('Face')
-                                        ],
-                                      ),
+                                      buildIconText(
+                                          context, Icons.arrow_back, 'Arrow'),
+                                      buildIconText(
+                                          context, Icons.nature, 'Nature'),
+                                      buildIconText(
+                                          context, Icons.label, 'Label'),
+                                      buildIconText(
+                                          context, Icons.radio, 'Radio'),
+                                      buildIconText(
+                                          context, Icons.face, 'Face'),
+                                      buildIconText(context, Icons.accessible,
+                                          'Accessible'),
+                                      buildIconText(
+                                          context, Icons.ac_unit, 'ac unit'),
+                                      buildIconText(
+                                          context, Icons.access_time, 'Time'),
+                                      buildIconText(
+                                          context, Icons.verified_user, 'User'),
+                                      buildIconText(
+                                          context, Icons.radio, 'Radio'),
+                                      buildIconText(
+                                          context, Icons.face, 'Face'),
+                                      buildIconText(context, Icons.accessible,
+                                          'Accessible'),
+                                      buildIconText(
+                                          context, Icons.ac_unit, 'ac unit'),
+                                      buildIconText(
+                                          context, Icons.access_time, 'Time'),
+                                      buildIconText(
+                                          context, Icons.verified_user, 'User'),
                                     ],
                                   ),
                                 ),
@@ -275,6 +153,31 @@ class LandingPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    // padding: EdgeInsets.all(18),
+                    alignment: Alignment.bottomLeft,
+                    height: 100,
+                    width: double.infinity,
+                    color: Theme.of(context).primaryColor,
+                    child: Row(children: [
+                      Expanded(
+                        flex: 1,
+                        child: Container(),
+                      ),
+                      Expanded(
+                        flex: 6,
+                        child: Text(
+                            'Made by your neighbors in Austin, Texas.© Nextdoor 2020.'),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Container(),
+                      ),
+                    ]),
                   ),
                 ],
               ),
